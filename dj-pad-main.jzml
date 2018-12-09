@@ -1,6 +1,68 @@
 <JZML>
 <PROJECT version="5350" width="1024" height="724" osc_target="-1" midi_target="-1" kbmouse_target="-1" skin="Flat"/>
 <WINDOW class="JAZZINTERFACE" text="Default" x="0" y="0" width="1024" height="724" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="LemurMenu" text="MiscPadMenu2" x="855" y="40" width="166" height="40" id="21" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="BeatJump,Loop,Beatmatch,Int/Rel/Abs">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/MiscPadMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="tabchange()" script="selecttab(MiscPadCont2, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/MiscPadMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="FaderMenu2" x="685" y="40" width="166" height="40" id="31" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Color FX,FX (FX1 Only),FX (FX123)">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/FaderMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="tabchange()" script="decl tab_num;
+decl rect_val;
+if (selection == 0) {
+  tab_num = 0;
+  rect_val = FaderCont2.CFX_Pos;
+} else if (selection == 1) {
+  tab_num = 1;
+  rect_val = FaderCont2.CFX_Pos;
+} else if (selection == 2) {
+  tab_num = 1;
+  rect_val = FaderCont2.FXMulti_Pos;
+}
+
+selecttab(FaderCont2, tab_num);
+setattribute(FaderCont2, 'rect', rect_val);
+" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="init()" script="selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu2/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="CueFxMenu2" x="514" y="40" width="167" height="40" id="26" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Hotcue,Pad FX1,Pad FX2,Slicer,SlicerLoop,Beatjump">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="baseCh=10" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu2/baseCh" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16417,0,0" kbmouse_scale="0,1,0,1"/>
+<MIDIOUT name="mode" message="0xB0" data1="getCh(baseCh, selection)" data2="1" channel="5" trigger_script="" target="0" trigger="1,1,1,1" scale="0,16383" flag="17"/>
+<SCRIPT name="tabchange()" script="selecttab(CueFxCont2, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="getCh(baseCh, offset)" script="return baseCh+offset;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu2/getCh" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="MiscPadMenu1" x="343" y="40" width="167" height="40" id="20" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="BeatJump,Loop,Beatmatch,Int/Rel/Abs">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/MiscPadMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="tabchange()" script="selecttab(MiscPadCont1, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/MiscPadMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="FaderMenu1" x="173" y="40" width="166" height="40" id="30" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Color FX,FX (FX1 Only),FX (FX123)">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/FaderMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="tabchange()" script="decl tab_num;
+decl rect_val;
+if (selection == 0) {
+  tab_num = 0;
+  rect_val = FaderCont1.CFX_Pos;
+} else if (selection == 1) {
+  tab_num = 1;
+  rect_val = FaderCont1.CFX_Pos;
+} else if (selection == 2) {
+  tab_num = 1;
+  rect_val = FaderCont1.FXMulti_Pos;
+}
+
+selecttab(FaderCont1, tab_num);
+setattribute(FaderCont1, 'rect', rect_val);
+" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="init()" script="selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu1/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+<WINDOW class="LemurMenu" text="CueFxMenu1" x="2" y="40" width="167" height="40" id="24" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Hotcue,Pad FX1,Pad FX2,Slicer,SlicerLoop,Beatjump">
+<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="baseCh=10" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu1/baseCh" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16417,0,0" kbmouse_scale="0,1,0,1"/>
+<MIDIOUT name="mode" message="0xB0" data1="getCh(baseCh, selection)" data2="1" channel="1" trigger_script="" target="0" trigger="1,1,1,1" scale="0,16383" flag="17"/>
+<SCRIPT name="tabchange()" script="selecttab(CueFxCont1, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="getCh(baseCh, offset)" script="return baseCh+offset;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/getCh" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
+</WINDOW>
 <WINDOW class="Pads" text="btnInfo" x="964" y="0" width="60" height="40" id="35" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="1" label="0" multicolor="0" multilabel="0" row="1">
 <PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/btnInfo/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attack=0" send="0" osc_target="0" osc_trigger="1" osc_message="/btnInfo/attack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1273,7 +1335,7 @@ ctlout(midi_target, cc, x * 12, midi_ch);" trigger_script="" trigger_type="4" tr
 <SCRIPT name="init()" script="FaderMenu2.selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderCont2/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="FaderCont1" x="0" y="196" width="512" height="108" id="28" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="0" meta="1">
-<WINDOW class="Tab" text="CFX" x="0" y="0" width="496" height="92" id="1" state="1" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="CFX" x="0" y="0" width="496" height="92" id="1" state="0" group="0" font="tahoma,11,0" >
 <WINDOW class="Container" text="QckFilter" x="0" y="0" width="496" height="92" id="31" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1208447" label="1" tabbar="1" meta="0">
 <WINDOW class="Fader" text="Fader" x="80" y="0" width="400" height="76" id="29" state="1" group="1" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="1596013" cursor="0" grid="0" grid_steps="1" label="0" physic="1" precision="3" unit="" value="0" zoom="1.000000">
 <PARAM name="x=" value="0.500000" send="16" osc_target="0" osc_trigger="1" osc_message="/FaderCont1/QckFilter/Fader/x" midi_target="0" midi_trigger="1" midi_message="0xB3,0xB3,21,21" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1328,7 +1390,7 @@ x = 0.5;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4"
 </WINDOW>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Tab" text="FX_Single" x="0" y="0" width="496" height="92" id="2" state="0" group="0" font="tahoma,11,0" >
+<WINDOW class="Tab" text="FX_Single" x="0" y="0" width="496" height="92" id="2" state="1" group="0" font="tahoma,11,0" >
 <WINDOW class="CustomButton" text="HideBtn" x="0" y="276" width="120" height="48" id="34" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="20740,556819" label_off="Hide FX" label_on="" outline="1">
 <PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/FaderCont1/HideBtn/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/FaderCont1/HideBtn/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1640,57 +1702,6 @@ ctlout(midi_target, cc, x * 12, midi_ch);" trigger_script="" trigger_type="4" tr
 <VARIABLE name="FXMulti_Pos={0, 196, 512, 340}" send="1" osc_target="0" osc_trigger="1" osc_message="/FaderCont1/FXMulti_Pos" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="-74,0,-84" kbmouse_scale="0,1,0,1"/>
 <SCRIPT name="init()" script="FaderMenu1.selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderCont1/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="LemurMenu" text="FaderMenu1" x="173" y="40" width="166" height="40" id="30" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Color FX,FX (FX1 Only),FX (FX123)">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/FaderMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="tabchange()" script="decl tab_num;
-decl rect_val;
-if (selection == 0) {
-  tab_num = 0;
-  rect_val = FaderCont1.CFX_Pos;
-} else if (selection == 1) {
-  tab_num = 1;
-  rect_val = FaderCont1.CFX_Pos;
-} else if (selection == 2) {
-  tab_num = 1;
-  rect_val = FaderCont1.FXMulti_Pos;
-}
-
-selecttab(FaderCont1, tab_num);
-setattribute(FaderCont1, 'rect', rect_val);
-" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="init()" script="selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu1/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-</WINDOW>
-<WINDOW class="LemurMenu" text="CueFxMenu1" x="2" y="40" width="167" height="40" id="24" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Hotcue,Pad FX1,Pad FX2,Slicer,SlicerLoop,Beatjump">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="baseCh=10" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu1/baseCh" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16417,0,0" kbmouse_scale="0,1,0,1"/>
-<MIDIOUT name="mode" message="0xB0" data1="getCh(baseCh, selection)" data2="1" channel="1" trigger_script="" target="0" trigger="1,1,1,1" scale="0,16383" flag="17"/>
-<SCRIPT name="tabchange()" script="selecttab(CueFxCont1, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="getCh(baseCh, offset)" script="return baseCh+offset;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/getCh" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
-</WINDOW>
-<WINDOW class="LemurMenu" text="MiscPadMenu1" x="343" y="40" width="167" height="40" id="20" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="BeatJump,Loop,Beatmatch,Int/Rel/Abs">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/MiscPadMenu1/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="tabchange()" script="selecttab(MiscPadCont1, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/MiscPadMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-</WINDOW>
-<WINDOW class="LemurMenu" text="FaderMenu2" x="685" y="40" width="166" height="40" id="31" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Color FX,FX (FX1 Only),FX (FX123)">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/FaderMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="tabchange()" script="decl tab_num;
-decl rect_val;
-if (selection == 0) {
-  tab_num = 0;
-  rect_val = FaderCont2.CFX_Pos;
-} else if (selection == 1) {
-  tab_num = 1;
-  rect_val = FaderCont2.CFX_Pos;
-} else if (selection == 2) {
-  tab_num = 1;
-  rect_val = FaderCont2.FXMulti_Pos;
-}
-
-selecttab(FaderCont2, tab_num);
-setattribute(FaderCont2, 'rect', rect_val);
-" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="init()" script="selection = 0;" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/FaderMenu2/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-</WINDOW>
 <WINDOW class="Text" text="txtInfo" x="964" y="10" width="60" height="20" id="34" state="245" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3699327" content="About">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/txtInfo/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
@@ -1738,17 +1749,6 @@ show(contInfo, 0);" trigger_script="x" trigger_type="0" trigger="1" clock="0" cl
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtSubTitle2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
-</WINDOW>
-<WINDOW class="LemurMenu" text="CueFxMenu2" x="514" y="40" width="167" height="40" id="26" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="Hotcue,Pad FX1,Pad FX2,Slicer,SlicerLoop,Beatjump">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<VARIABLE name="baseCh=10" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxMenu2/baseCh" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="16417,0,0" kbmouse_scale="0,1,0,1"/>
-<MIDIOUT name="mode" message="0xB0" data1="getCh(baseCh, selection)" data2="1" channel="5" trigger_script="" target="0" trigger="1,1,1,1" scale="0,16383" flag="17"/>
-<SCRIPT name="tabchange()" script="selecttab(CueFxCont2, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="getCh(baseCh, offset)" script="return baseCh+offset;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu2/getCh" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
-</WINDOW>
-<WINDOW class="LemurMenu" text="MiscPadMenu2" x="855" y="40" width="166" height="40" id="21" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" scale="0" content="BeatJump,Loop,Beatmatch,Int/Rel/Abs">
-<PARAM name="selection=" value="0.000000" send="0" osc_target="0" osc_trigger="1" osc_message="/MiscPadMenu2/selection" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="tabchange()" script="selecttab(MiscPadCont2, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/MiscPadMenu2/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 </JZML>
