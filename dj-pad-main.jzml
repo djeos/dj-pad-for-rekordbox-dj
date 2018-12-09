@@ -63,7 +63,7 @@ setattribute(FaderCont1, 'rect', rect_val);
 <SCRIPT name="tabchange()" script="selecttab(CueFxCont1, selection);" trigger_script="selection" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/tabchange" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="getCh(baseCh, offset)" script="return baseCh+offset;" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxMenu1/getCh" midi_message="0x90,0x90,0,0" midi_target="-1" flag="0"/>
 </WINDOW>
-<WINDOW class="Pads" text="btnInfo" x="964" y="0" width="60" height="40" id="35" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="865343,1596013" column="1" label="0" multicolor="0" multilabel="0" row="1">
+<WINDOW class="Pads" text="btnInfo" x="964" y="0" width="60" height="40" id="35" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="19030,3699327" column="1" label="0" multicolor="0" multilabel="0" row="1">
 <PARAM name="x=" value="0.000000" send="16" osc_target="0" osc_trigger="1" osc_message="/btnInfo/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="attack=0" send="0" osc_target="0" osc_trigger="1" osc_message="/btnInfo/attack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="decay=0" send="0" osc_target="0" osc_trigger="1" osc_message="/btnInfo/decay" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -1705,7 +1705,7 @@ ctlout(midi_target, cc, x * 12, midi_ch);" trigger_script="" trigger_type="4" tr
 <WINDOW class="Text" text="txtInfo" x="964" y="10" width="60" height="20" id="34" state="245" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3699327" content="About">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/txtInfo/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="Container" text="contInfo" x="120" y="50" width="784" height="396" id="36" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="contInfo" x="120" y="50" width="784" height="420" id="36" state="0" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
 <WINDOW class="Text" text="txtTitle" x="0" y="0" width="768" height="48" id="1" state="245" group="0" font="tahoma,14,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="DJ Pad For Rekordbox DJ">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/txtTitle/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
@@ -1715,7 +1715,7 @@ ctlout(midi_target, cc, x * 12, midi_ch);" trigger_script="" trigger_type="4" tr
 <SCRIPT name="onX()" script="// Close Info Container
 show(contInfo, 0);" trigger_script="x" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/contInfo/btnClose/onX" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
-<WINDOW class="Container" text="contDevMembers" x="34" y="230" width="700" height="130" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="Container" text="contDevMembers" x="34" y="210" width="700" height="180" id="7" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
 <WINDOW class="Text" text="txtSubTitle1" x="0" y="0" width="684" height="20" id="2" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="Project Leader / Main Developer">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtSubTitle1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
@@ -1728,27 +1728,57 @@ show(contInfo, 0);" trigger_script="x" trigger_type="0" trigger="1" clock="0" cl
 <WINDOW class="Text" text="txtBody2" x="6" y="70" width="678" height="20" id="5" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="-">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtBody2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="Text" text="txtBody3" x="6" y="90" width="678" height="20" id="6" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="-">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtBody3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<WINDOW class="Text" text="txtBody4" x="6" y="120" width="678" height="20" id="7" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- Repository: https://github.com/djeos/dj-pad-for-rekordbox-dj">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtBody4/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="txtSubTitle3" x="0" y="100" width="684" height="20" id="8" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="How to Contribute">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtSubTitle3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="txtBody5" x="6" y="140" width="678" height="20" id="9" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- Email me (djeos367@gmail.com) with your GitHub account so that I can invite you as a developer">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers/txtBody5/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
-<WINDOW class="Container" text="contDevMembers2" x="34" y="60" width="700" height="160" id="8" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
-<WINDOW class="Text" text="txtSubTitle1" x="0" y="0" width="684" height="20" id="2" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="How to Download / Install">
+<WINDOW class="Container" text="contDevMembers2" x="34" y="120" width="700" height="80" id="8" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="Text" text="txtSubTitle1" x="0" y="0" width="684" height="20" id="2" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="User Manual">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtSubTitle1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="Text" text="txtBody1" x="6" y="20" width="678" height="20" id="3" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- https:// (free download, This is an open-source proejct)">
+<WINDOW class="Text" text="txtBody1" x="6" y="20" width="678" height="20" id="3" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- Not provided yet">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtBody1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
-<WINDOW class="Text" text="txtBody2" x="6" y="40" width="678" height="20" id="5" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="-">
+<WINDOW class="Text" text="txtBody2" x="6" y="40" width="678" height="20" id="4" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- Lemur tutorials might help (Search for 'Lemur tutorial' in Youtube or Google)">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtBody2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
+</WINDOW>
+<WINDOW class="Container" text="contDevMembers3" x="34" y="50" width="700" height="60" id="9" state="1" group="0" font="tahoma,10,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" label="1" tabbar="1" meta="0">
+<WINDOW class="Text" text="txtSubTitle1" x="0" y="0" width="684" height="20" id="2" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="Version Info">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers3/txtSubTitle1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="txtBody1" x="6" y="20" width="678" height="20" id="3" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- 0.9.0">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers3/txtBody1/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Text" text="txtBody2" x="6" y="40" width="678" height="20" id="5" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="-">
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers3/txtBody2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
 <WINDOW class="Text" text="txtBody3" x="6" y="90" width="678" height="20" id="6" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="- Email me (djeos367@gmail.com) with your GitHub account so that I can provide you  ">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtBody3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers3/txtBody3/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 <WINDOW class="Text" text="txtSubTitle2" x="0" y="70" width="684" height="20" id="7" state="85" group="0" font="tahoma,12,0" send="0" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="How to Contribute">
-<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers2/txtSubTitle2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/contInfo/contDevMembers3/txtSubTitle2/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
 </WINDOW>
 </WINDOW>
+<SCRIPT name="EditModePreference()" script="// When editing the project, change this option so that hided containers are revealed
+decl edit_mode = 0; // This must be zero when releasing this project
+
+if (edit_mode != 1) {
+  /* [DO NOT CHANGE] This is the default behavior! */
+  show(contInfo, 0);
+} else { 
+  /* Freely change options below when editing the project */
+  show(contInfo, 1);
+}
+
+
+" trigger_script="" trigger_type="5" trigger="1" clock="0" clock_div="4" osc_message="/EditModePreference" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </JZML>
