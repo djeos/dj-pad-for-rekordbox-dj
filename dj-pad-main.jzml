@@ -507,7 +507,6 @@ send_noteout(x[pad_no], note);
 <SCRIPT name="on_x_event6()" script="on_x_event_func(6);" trigger_script="x[6]" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxCont1/Pads_Shift/on_x_event6" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="on_x_event7()" script="on_x_event_func(7);" trigger_script="x[7]" trigger_type="0" trigger="1" clock="0" clock_div="4" osc_message="/CueFxCont1/Pads_Shift/on_x_event7" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 <SCRIPT name="send_noteout(velocity, note)" script="noteout(midi_target, note, velocity * 127, midi_ch);" trigger_script="" trigger_type="4" trigger="1" clock="0" clock_div="4" osc_message="/CueFxCont1/Pads_Shift/send_noteout" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
-<SCRIPT name="on_midi_rcv(MIDI_ARGS)" script="Monitor.value = 2;" trigger_script="" trigger_type="3" trigger="1" clock="0" clock_div="4" osc_message="/CueFxCont1/Pads_Shift/on_midi_rcv" midi_message="0x9F,0x9F,0,0" midi_target="0" flag="1"/>
 </WINDOW>
 <WINDOW class="CustomButton" text="btn7" x="336" y="228" width="80" height="60" id="7" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="20740,556819" label_off="call prev" label_on="call prev" outline="1">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/CueFxCont1/btn7/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,30,30" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -540,9 +539,6 @@ send_midi(x, cc);
 <WINDOW class="CustomButton" text="btn17" x="160" y="228" width="80" height="60" id="11" state="241" group="0" font="tahoma,12,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" behavior="1" bitmap="0,0" capture="1" color="20740,556819" label_off="quantize toggle" label_on="quantize toggle" outline="1">
 <PARAM name="x=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/CueFxCont1/btn17/x" midi_target="0" midi_trigger="1" midi_message="0xB1,0xB1,34,34" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxCont1/btn17/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-</WINDOW>
-<WINDOW class="Monitor" text="Monitor" x="8" y="103" width="248" height="60" id="12" state="241" group="0" font="tahoma,20,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="1596013" label="1" precision="3" unit="" value="1">
-<VARIABLE name="value=" value="3" send="0" osc_target="0" osc_trigger="1" osc_message="/CueFxCont1/Monitor/value" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
 <WINDOW class="Tab" text="FX1" x="0" y="0" width="496" height="288" id="1" state="0" group="0" font="tahoma,11,0" >
